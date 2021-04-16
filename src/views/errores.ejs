@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errores</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>    
+    <form name="input" action="/editor" method="post">
+      <button type="submit" class="btn btn-success">Regresar</button>
+      <section>
+        <textarea name="textoArea" id="textoArea" cols="100" rows="0" class="textArea"><%= textoEntrada %></textarea>
+      </section>
+  </form>
+    
+    <div class="alert alert-danger" role="alert">
+        Errores en la gramatica de entrada, son los siguientes
+      </div>    
+    <section>
+        <table class="table table-bordered table-dark">
+            
+            <thead>                
+                <tr id="cabecera">
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Dato</th>
+                    <th scope="col">Linea</th>
+                    <th scope="col">Columna</th>
+                </tr>
+            </thead>
+            <tbody id="tableBodyPS">
+                <% for(var i in arregloErrores){%>
+                    <tr>
+                        <% for(var a in arregloErrores[i]){%>
+                    <td><%= arregloErrores[i][a];%></td>                    
+                    <%}%>
+                </tr>
+                    <% } %>                
+            </tbody>
+        </table>
+    </section> 
+</body>
+<script src="ManejadorTabla.ts"></script>
+</html>

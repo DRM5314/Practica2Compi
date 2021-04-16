@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reslutados analisis</title>
+</head>
+
+<body>
+    <div class="alert alert-success" role="alert">
+        Analisis completado con exito
+            <%= ambigua%>
+    </div>
+    <a href="/editor" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Nuevo analisis</a>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <section>
+        <div class="alert alert-primary" role="alert">
+            Terminales
+        </div>
+        <table class="table table-bordered table-dark">
+            <thead>
+                <tr id="cabecera">
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Expresion</th>
+                </tr>
+            </thead>
+            <tbody id="tableBodyPS">
+                <% for(var i in arregloTerminales){%>
+                    <tr>
+                        <% for(var a in arregloTerminales[i]){%>
+                            <td>
+                                <%= arregloTerminales[i][a];%>
+                            </td>
+                            <%}%>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <div class="alert alert-primary" role="alert">
+            Primeros y Siguientes
+        </div>
+        <table class="table table-bordered table-dark">
+            <thead>
+                <tr id="cabecera">
+                    <th scope="col">No terminal</th>
+                    <th scope="col">Primeros</th>
+                    <th scope="col">Siguientes</th>
+                </tr>
+            </thead>
+            <tbody id="tableBodyPS">
+                <% for(var i in arregloPS){%>
+                    <tr>
+                        <% for(var a in arregloPS[i]){%>
+                            <td>
+                                <%= arregloPS[i][a];%>
+                            </td>
+                            <%}%>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <div class="alert alert-primary" role="alert">
+            Listado de mueve con terminal a no terminal
+        </div>
+        <table class="table table-bordered table-dark">
+            <thead>
+                <tr id="cabecera">
+                    <th scope="col">Prod</th>
+                    <th scope="col">Mueve con </th>
+                    <th scope="col">Hacia</th>
+                </tr>
+            </thead>
+            <tbody id="tableBodyM">
+                <% for(var i in arregloM){%>
+                    <tr>
+                        <% for(var a in arregloM[i]){%>
+                            <td>
+                                <%= arregloM[i][a];%>
+                            </td>
+                            <%}%>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </section>
+</body>
+<script src="ManejadorTabla.ts"></script>
+
+</html>
